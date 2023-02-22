@@ -156,7 +156,7 @@ func Listen(iface *net.Interface, socketType int, socketProtocol int, config *Co
 		}
 	}
 
-	err = receiver.Bind(&unix.SockaddrLinklayer{Protocol: htons(uint16(socketProtocol))})
+	err = receiver.Bind(&unix.SockaddrLinklayer{Protocol: htons(uint16(socketProtocol)), Ifindex: iface.Index})
 	if err != nil {
 		return nil, fmt.Errorf("failed to bind: %v", err)
 	}

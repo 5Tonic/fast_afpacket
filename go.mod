@@ -1,4 +1,4 @@
-module github.com/subspace-com/fast_afpacket
+module github.com/5tonic/fast_afpacket
 
 go 1.17
 

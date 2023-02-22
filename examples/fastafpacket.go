@@ -13,7 +13,7 @@ import (
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
 	"github.com/sirupsen/logrus"
-	fastafpacket "github.com/subspace-com/fast_afpacket"
+	fastafpacket "github.com/5tonic/fast_afpacket"
 	"golang.org/x/net/bpf"
 	"golang.org/x/sys/unix"
 	"inet.af/netaddr"
