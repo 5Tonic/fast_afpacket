@@ -201,6 +201,10 @@ func enableSocketOptions(conn *socket.Conn, iface *net.Interface) error {
 		return fmt.Errorf("could not set PACKET_TIMESTAMP: %v", err)
 	}
 
+	if err := conn.SetsockoptInt(unix.SOL_PACKET, unix.PACKET_IGNORE_OUTGOING, 1); err != nil{
+		return fmt.Errorf("setsockopt packer_ignore_outgoing: %v", err)
+	}
+
 	return nil
 }
 
