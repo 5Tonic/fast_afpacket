@@ -8,7 +8,6 @@ import (
 	"net"
 	"os"
 	"unsafe"
-	"log"
 
 	"github.com/mdlayher/socket"
 	"golang.org/x/net/bpf"
@@ -150,7 +149,6 @@ func Listen(iface *net.Interface, socketType int, socketProtocol int, config *Co
 		return nil, fmt.Errorf("failed to enable socket timestamping: %v", err)
 	}
 
-	log.Prinln(receiver.GetsockoptInt(unix.SOL_SOCKET, unix.PACKET_IGNORE_OUTGOING))
 
 	if config.Filter != nil {
 		err := receiver.SetBPF(config.Filter)
